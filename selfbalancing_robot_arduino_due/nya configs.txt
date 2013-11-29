@@ -1,0 +1,59 @@
+speedPIDKi = 5.00;
+speedPIDKd = 0.00;
+anglePIDAggKp = 50.00;
+anglePIDAggKi = 0.00;
+anglePIDAggKd = 0.00;
+anglePIDConKp = 40.00;
+anglePIDConKi = 1.00;
+anglePIDConKd = 0.00;
+anglePIDLowerLimit = 8.00;
+calibratedZeroAngle = -8.60;
+anglePIDSampling = 10;
+speedPIDSampling = 0;
+angleSensorSampling = 10;
+motorSpeedSensorSampling = 10;
+
+
+
+2013-11-29
+Configuration
+configuration.speedPIDKp = 0.50;
+configuration.speedPIDKi = 0.01;
+configuration.speedPIDKd = 0.02;
+configuration.speedPIDOutputLowerLimit = -3.00;
+configuration.speedPIDOutputHigherLimit = 3.00;
+configuration.anglePIDAggKp = 0.80;
+configuration.anglePIDAggKi = 0.00;
+configuration.anglePIDAggKd = 0.00;
+configuration.anglePIDConKp = 20.00;
+configuration.anglePIDConKi = 0.50;
+configuration.anglePIDConKd = 0.25;
+configuration.anglePIDLowerLimit = 20.00;
+configuration.calibratedZeroAngle = -11.35;
+configuration.anglePIDSampling = 10;
+configuration.speedPIDSampling = 5;
+configuration.angleSensorSampling = 10;
+configuration.motorSpeedSensorSampling = 10;
+configuration.debugLevel = 0;
+
+
+
+configuration.speedPIDKp = 0.50;
+configuration.speedPIDKi = 0.01;
+configuration.speedPIDKd = 0.01;
+configuration.speedPIDOutputLowerLimit = -3.00;
+configuration.speedPIDOutputHigherLimit = 3.00;
+configuration.anglePIDAggKp = 50.00;
+configuration.anglePIDAggKi = 0.00;
+configuration.anglePIDAggKd = 0.00;
+configuration.anglePIDConKp = 20.00;
+configuration.anglePIDConKi = 0.50;
+configuration.anglePIDConKd = 0.25;
+configuration.anglePIDLowerLimit = 5.00;
+configuration.calibratedZeroAngle = -11.35;
+configuration.anglePIDSampling = 10;
+configuration.speedPIDSampling = 5;
+configuration.angleKalmanFilterR = 1.00;
+configuration.angleSensorSampling = 15;
+configuration.motorSpeedSensorSampling = 10;
+configuration.speedKalmanFilterR = 3.00;

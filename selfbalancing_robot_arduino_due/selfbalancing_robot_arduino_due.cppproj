@@ -1,0 +1,855 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.1</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
+    <ProjectGuid>{07b459b4-8d76-4638-bc6d-a459ba2d616b}</ProjectGuid>
+    <avrdevice>ATmega2560</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>selfbalancing_robot_arduino_due</AssemblyName>
+    <Name>selfbalancing_robot_arduino_due</Name>
+    <RootNamespace>selfbalancing_robot_arduino_due</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue>
+    </OverrideVtorValue>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <CacheFlash>true</CacheFlash>
+    <UncachedRange />
+    <BootSegment>0</BootSegment>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.7.2" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\cores\arduino</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\variants\arduino_due_x</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\_Stub</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\_Stub\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AD7746</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AD7746\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_GFX</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_GFX\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_PCD8544</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_PCD8544\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ADS1115</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ADS1115\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\adxl345driver</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\adxl345driver\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AK8975</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AK8975\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMA150</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMA150\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bma180</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bma180\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMP085</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMP085\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bmp085driver</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bmp085driver\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Button</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Button\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\CAN_BUS_Shield</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\CAN_BUS_Shield\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DebugUtils</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DebugUtils\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DS1307</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DS1307\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlash</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlash\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlashStorage</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlashStorage\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\EasyTransfer</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\EasyTransfer\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Fastwire</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Fastwire\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR_v2</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR_v2\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeIMU</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeIMU\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_ARM</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_ARM\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_AVR</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_AVR\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HashMap</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HashMap\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5843</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5843\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5883L</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5883L\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC58X3</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC58X3\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\I2Cdev</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\I2Cdev\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\i2cmaster</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\i2cmaster\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\IAQ2000</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\IAQ2000\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ITG3200</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ITG3200\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\itg3200filv05</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\itg3200filv05\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\KalmanFilter</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\KalmanFilter\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\L29x</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\L29x\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LED</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LED\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LM73</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LM73\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MovingAvarageFilter</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MovingAvarageFilter\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPR121</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPR121\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU6050</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU6050\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU60X0</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU60X0\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MS561101BA</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MS561101BA\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MSP430</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MSP430\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PID_v1</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PID_v1\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PlotterV2</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PlotterV2\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SerialCommand</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SerialCommand\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SignalFilter</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SignalFilter\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SPI</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SPI\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SSD1308</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SSD1308\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TCA6424A</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TCA6424A\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TimedAction</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TimedAction\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Wire</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Wire\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Audio</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Audio\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Bridge</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Bridge\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\EEPROM</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\EEPROM\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Esplora</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Esplora\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Ethernet</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Ethernet\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Firmata</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Firmata\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\GSM</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\GSM\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\LiquidCrystal</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\LiquidCrystal\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\RobotIRremote</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\RobotIRremote\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Control</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Control\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Motor</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Motor\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Scheduler</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Scheduler\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SD</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SD\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Servo</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Servo\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SoftwareSerial</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SoftwareSerial\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SpacebrewYun</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SpacebrewYun\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SPI</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SPI\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Stepper</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Stepper\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Temboo</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Temboo\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\TFT</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\TFT\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\USBHost</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\USBHost\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\WiFi</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\WiFi\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\CMSIS\CMSIS\Include\</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\CMSIS\Device\ATMEL\</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\libsam</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\libsam\include</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\arm-none-eabi\include</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\arm_none_eabi\include\</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\lib\gcc\arm-none-eabi\4.4.1\include</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\lib\gcc\arm-none-eabi\4.4.1\include\</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -include=arduino.h</avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__SAM3X8E__</Value>
+            <Value>USB_VID=0x2341</Value>
+            <Value>USB_PID=0x003e</Value>
+            <Value>USBCON</Value>
+            <Value>ARDUINO=101</Value>
+            <Value>ARDUINO_MAIN</Value>
+            <Value>F_CPU=84000000L</Value>
+            <Value>printf=iprintf</Value>
+            <Value>__SAM__</Value>
+            <Value>__cplusplus</Value>
+          </ListValues>
+        </avrgcccpp.compiler.symbols.DefSymbols>
+        <avrgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\cores\arduino</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\variants\arduino_due_x</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\_Stub</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\_Stub\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AD7746</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AD7746\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_GFX</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_GFX\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_PCD8544</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_PCD8544\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ADS1115</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ADS1115\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\adxl345driver</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\adxl345driver\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AK8975</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AK8975\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMA150</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMA150\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bma180</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bma180\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMP085</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMP085\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bmp085driver</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bmp085driver\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Button</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Button\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\CAN_BUS_Shield</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\CAN_BUS_Shield\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DebugUtils</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DebugUtils\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DS1307</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DS1307\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlash</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlash\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlashStorage</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlashStorage\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\EasyTransfer</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\EasyTransfer\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Fastwire</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Fastwire\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR_v2</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR_v2\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeIMU</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeIMU\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_ARM</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_ARM\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_AVR</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_AVR\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HashMap</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HashMap\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5843</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5843\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5883L</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5883L\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC58X3</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC58X3\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\I2Cdev</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\I2Cdev\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\i2cmaster</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\i2cmaster\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\IAQ2000</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\IAQ2000\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ITG3200</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ITG3200\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\itg3200filv05</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\itg3200filv05\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\KalmanFilter</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\KalmanFilter\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\L29x</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\L29x\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LED</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LED\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LM73</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LM73\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MovingAvarageFilter</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MovingAvarageFilter\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPR121</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPR121\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU6050</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU6050\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU60X0</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU60X0\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MS561101BA</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MS561101BA\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MSP430</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MSP430\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PID_v1</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PID_v1\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PlotterV2</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PlotterV2\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SerialCommand</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SerialCommand\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SignalFilter</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SignalFilter\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SPI</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SPI\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SSD1308</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SSD1308\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TCA6424A</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TCA6424A\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TimedAction</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TimedAction\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Wire</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Wire\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Audio</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Audio\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Bridge</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Bridge\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\EEPROM</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\EEPROM\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Esplora</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Esplora\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Ethernet</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Ethernet\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Firmata</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Firmata\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\GSM</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\GSM\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\LiquidCrystal</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\LiquidCrystal\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\RobotIRremote</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\RobotIRremote\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Control</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Control\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Motor</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Motor\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Scheduler</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Scheduler\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SD</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SD\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Servo</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Servo\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SoftwareSerial</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SoftwareSerial\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SpacebrewYun</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SpacebrewYun\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SPI</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SPI\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Stepper</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Stepper\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Temboo</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Temboo\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\TFT</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\TFT\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\USBHost</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\USBHost\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\WiFi</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\WiFi\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\CMSIS\CMSIS\Include\</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\CMSIS\Device\ATMEL\</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\libsam</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\libsam\include</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\arm-none-eabi\include</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\arm_none_eabi\include\</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\lib\gcc\arm-none-eabi\4.4.1\include</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\lib\gcc\arm-none-eabi\4.4.1\include\</Value>
+          </ListValues>
+        </avrgcccpp.compiler.directories.IncludePaths>
+        <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+        <avrgcccpp.compiler.miscellaneous.OtherFlags>-include=arduino.h</avrgcccpp.compiler.miscellaneous.OtherFlags>
+        <avrgcccpp.linker.memorysettings.Comment>&lt;segmentname&gt;=&lt;address&gt;, for example  .boot=0xff</avrgcccpp.linker.memorysettings.Comment>
+        <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__SAM3X8E__</Value>
+            <Value>USB_VID=0x2341</Value>
+            <Value>USB_PID=0x003e</Value>
+            <Value>USBCON</Value>
+            <Value>ARDUINO=101</Value>
+            <Value>ARDUINO_MAIN</Value>
+            <Value>F_CPU=84000000L</Value>
+            <Value>printf=iprintf</Value>
+            <Value>__SAM__</Value>
+            <Value>__cplusplus</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+      </AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\cores\arduino</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\variants\arduino_due_x</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\_Stub</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\_Stub\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AD7746</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AD7746\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_GFX</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_GFX\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_PCD8544</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_PCD8544\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ADS1115</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ADS1115\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\adxl345driver</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\adxl345driver\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AK8975</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AK8975\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMA150</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMA150\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bma180</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bma180\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMP085</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMP085\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bmp085driver</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bmp085driver\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Button</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Button\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\CAN_BUS_Shield</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\CAN_BUS_Shield\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DebugUtils</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DebugUtils\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DS1307</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DS1307\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlash</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlash\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlashStorage</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlashStorage\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\EasyTransfer</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\EasyTransfer\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Fastwire</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Fastwire\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR_v2</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR_v2\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeIMU</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeIMU\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_ARM</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_ARM\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_AVR</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_AVR\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HashMap</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HashMap\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5843</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5843\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5883L</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5883L\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC58X3</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC58X3\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\I2Cdev</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\I2Cdev\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\i2cmaster</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\i2cmaster\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\IAQ2000</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\IAQ2000\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ITG3200</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ITG3200\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\itg3200filv05</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\itg3200filv05\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\KalmanFilter</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\KalmanFilter\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\L29x</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\L29x\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LED</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LED\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LM73</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LM73\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MovingAvarageFilter</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MovingAvarageFilter\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPR121</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPR121\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU6050</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU6050\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU60X0</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU60X0\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MS561101BA</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MS561101BA\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MSP430</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MSP430\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PID_v1</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PID_v1\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PlotterV2</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PlotterV2\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SerialCommand</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SerialCommand\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SignalFilter</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SignalFilter\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SPI</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SPI\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SSD1308</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SSD1308\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TCA6424A</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TCA6424A\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TimedAction</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TimedAction\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Wire</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Wire\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Audio</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Audio\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Bridge</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Bridge\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\EEPROM</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\EEPROM\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Esplora</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Esplora\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Ethernet</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Ethernet\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Firmata</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Firmata\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\GSM</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\GSM\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\LiquidCrystal</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\LiquidCrystal\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\RobotIRremote</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\RobotIRremote\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Control</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Control\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Motor</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Motor\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Scheduler</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Scheduler\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SD</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SD\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Servo</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Servo\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SoftwareSerial</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SoftwareSerial\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SpacebrewYun</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SpacebrewYun\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SPI</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SPI\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Stepper</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Stepper\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Temboo</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Temboo\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\TFT</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\TFT\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\USBHost</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\USBHost\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\WiFi</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\WiFi\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\CMSIS\CMSIS\Include\</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\CMSIS\Device\ATMEL\</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\libsam</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\libsam\include</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\arm-none-eabi\include</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\arm_none_eabi\include\</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\lib\gcc\arm-none-eabi\4.4.1\include</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\lib\gcc\arm-none-eabi\4.4.1\include\</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -include=arduino.h</avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__SAM3X8E__</Value>
+            <Value>USB_VID=0x2341</Value>
+            <Value>USB_PID=0x003e</Value>
+            <Value>USBCON</Value>
+            <Value>ARDUINO=101</Value>
+            <Value>ARDUINO_MAIN</Value>
+            <Value>F_CPU=84000000L</Value>
+            <Value>printf=iprintf</Value>
+            <Value>__SAM__</Value>
+            <Value>__cplusplus</Value>
+          </ListValues>
+        </avrgcccpp.compiler.symbols.DefSymbols>
+        <avrgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\cores\arduino</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\variants\arduino_due_x</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\_Stub</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\_Stub\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AD7746</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AD7746\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_GFX</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_GFX\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_PCD8544</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Adafruit_PCD8544\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ADS1115</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ADS1115\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\adxl345driver</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\adxl345driver\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AK8975</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\AK8975\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMA150</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMA150\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bma180</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bma180\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMP085</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\BMP085\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bmp085driver</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\bmp085driver\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Button</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Button\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\CAN_BUS_Shield</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\CAN_BUS_Shield\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DebugUtils</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DebugUtils\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DS1307</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DS1307\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlash</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlash\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlashStorage</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\DueFlashStorage\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\EasyTransfer</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\EasyTransfer\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Fastwire</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Fastwire\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR_v2</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FIR_v2\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeIMU</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeIMU\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_ARM</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_ARM\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_AVR</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\FreeRTOS_AVR\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HashMap</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HashMap\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5843</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5843\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5883L</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC5883L\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC58X3</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\HMC58X3\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\I2Cdev</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\I2Cdev\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\i2cmaster</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\i2cmaster\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\IAQ2000</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\IAQ2000\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ITG3200</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\ITG3200\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\itg3200filv05</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\itg3200filv05\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\KalmanFilter</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\KalmanFilter\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\L29x</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\L29x\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LED</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LED\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LM73</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\LM73\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MovingAvarageFilter</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MovingAvarageFilter\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPR121</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPR121\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU6050</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU6050\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU60X0</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MPU60X0\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MS561101BA</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MS561101BA\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MSP430</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\MSP430\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PID_v1</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PID_v1\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PlotterV2</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\PlotterV2\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SerialCommand</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SerialCommand\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SignalFilter</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SignalFilter\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SPI</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SPI\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SSD1308</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\SSD1308\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TCA6424A</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TCA6424A\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TimedAction</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\TimedAction\utility</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Wire</Value>
+            <Value>\\vmware-host\Shared Folders\Dokument\Arduino\libraries\Wire\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Audio</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Audio\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Bridge</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Bridge\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\EEPROM</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\EEPROM\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Esplora</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Esplora\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Ethernet</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Ethernet\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Firmata</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Firmata\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\GSM</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\GSM\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\LiquidCrystal</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\LiquidCrystal\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\RobotIRremote</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\RobotIRremote\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Control</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Control\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Motor</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Robot_Motor\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Scheduler</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Scheduler\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SD</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SD\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Servo</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Servo\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SoftwareSerial</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SoftwareSerial\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SpacebrewYun</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SpacebrewYun\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SPI</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\SPI\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Stepper</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Stepper\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Temboo</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\Temboo\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\TFT</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\TFT\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\USBHost</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\USBHost\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\WiFi</Value>
+            <Value>C:\Program Files (x86)\Arduino\libraries\WiFi\utility</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\CMSIS\CMSIS\Include\</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\CMSIS\Device\ATMEL\</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\libsam</Value>
+            <Value>C:\Program Files (x86)\Arduino\hardware\arduino\sam\system\libsam\include</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\arm-none-eabi\include</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\arm_none_eabi\include\</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\lib\gcc\arm-none-eabi\4.4.1\include</Value>
+            <Value>C:\Program Files (x86)\Arduino/hardware/tools/g++_arm_none_eabi\lib\gcc\arm-none-eabi\4.4.1\include\</Value>
+          </ListValues>
+        </avrgcccpp.compiler.directories.IncludePaths>
+        <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+        <avrgcccpp.compiler.miscellaneous.OtherFlags>-include=arduino.h</avrgcccpp.compiler.miscellaneous.OtherFlags>
+        <avrgcccpp.linker.memorysettings.Comment>&lt;segmentname&gt;=&lt;address&gt;, for example  .boot=0xff</avrgcccpp.linker.memorysettings.Comment>
+        <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__SAM3X8E__</Value>
+            <Value>USB_VID=0x2341</Value>
+            <Value>USB_PID=0x003e</Value>
+            <Value>USBCON</Value>
+            <Value>ARDUINO=101</Value>
+            <Value>ARDUINO_MAIN</Value>
+            <Value>F_CPU=84000000L</Value>
+            <Value>printf=iprintf</Value>
+            <Value>__SAM__</Value>
+            <Value>__cplusplus</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+      </AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="flash.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="imu_ahrs.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="imu_compass.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="imu_dcm.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="imu_math.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="imu_sensors.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="selfbalancing_robot_arduino_due.ino">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="serial_commands.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="v_control_task.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="v_read_imu_task.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="v_update_button_status_task.ino">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Visual Micro\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Visual Micro\.selfbalancing_robot_arduino_due.vsarduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

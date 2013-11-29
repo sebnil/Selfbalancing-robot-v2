@@ -1,0 +1,7 @@
+från närmast C2
+röd
+svart
+grön
+blå
+gul
+vit

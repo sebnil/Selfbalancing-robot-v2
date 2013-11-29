@@ -1,0 +1,17 @@
+3x plates in carbonate. See drawing. Can probably be replaced with wood, plexi, aluminium, ...
+2x 1m threaded rods. Cut them into 0.5 m pieces.
+Nuts and washers for the threaded rods.
+Taijiuino Due (Arduino Due clone with some improvements) http://www.emartee.com/product/42273/Taijiuino%20Due%20Pro%20R2%20With%20Programmer%20Downloader
+nRF24LU1 nRF24L01 Serial Wireless Module Kits. http://www.emartee.com/product/42281/nRF24LU1%20nRF24L01%20Serial%20Wireless%20Module%20Kits
+Pololu 12V, 29:1 Gear Motor w / Encoder. http://www.robotshop.com/en/pololu-12v-29-1-gear-motor-encoder.html
+Pololu Wheel 90 x 10mm Black (Pair). http://www.robotshop.com/en/pololu-wheel-90-10mm-black-pair.html
+Pololu Universal Aluminum 6mm Mounting Hub (4-40). http://www.robotshop.com/en/pololu-universal-aluminum-6mm-mounting-hub.html
+Pololu 37D mm Metal Gearmotor Bracket (Pair). http://www.robotshop.com/en/pololu-37d-mm-metal-gearmotor-bracket.html
+9 DOF IMU. ITG3200/ITG320​5 ADXL345 HMC5883L Module. http://www.ebay.com/bhp/imu-sensor
+Dual H Bridge module with l298n. Unknown manufacturer but found easily on ebay. http://www.ebay.com/sch/i.html?_odkw=motor+driver+l298n&_osacat=0&_from=R40&_trksid=p2045573.m570.l1313.TR0.TRC0.Xh+bridge+l298n&_nkw=h+bridge+l298n&_sacat=0
+BAT-01 Battery Pack NiMH 12V 1600mAh. Battery is not very important as long as it is reasonably light and with good capacity. http://www.electrokit.com/bat01-batteripack-nimh-12v-1600mah.45644
+TFT Display 3.2". Ebay. http://www.ebay.com/itm/SainSmart-3-2-SSD1289-TFT-LCD-Display-Touch-Screen-MicroSD-Arduino-Raspberry-Pi-/121219399660?pt=LH_DefaultDomain_0&hash=item1c393d3fec
+Arduino Mega empty shield to mount components on.
+Cables.
+Dupont connectors
+Velcro to fasten modules onto the plates.
