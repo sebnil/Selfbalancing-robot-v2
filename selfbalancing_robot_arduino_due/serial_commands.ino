@@ -198,6 +198,9 @@ void setCommand() {
 		else if (String("speedKalmanFilterDebug").equals(arg)) {
 			configuration.speedKalmanFilterDebug= atoi(value);
 		}
+		else if (String("speedRawDebug").equals(arg)) {
+			configuration.speedRawDebug= atoi(value);
+		}
 		else if (String("speedMovingAvarageFilter2Debug").equals(arg)) {
 			configuration.speedMovingAvarageFilter2Debug= atoi(value);
 		}
@@ -209,6 +212,9 @@ void setCommand() {
 		}
 		else if (String("anglePIDOutputDebug").equals(arg)) {
 			configuration.anglePIDOutputDebug = atoi(value);
+		}
+		else if (String("angleRawDebug").equals(arg)) {
+			configuration.angleRawDebug = atoi(value);
 		}
 		else if (dl.equals(arg)) {
 			configuration.debugLevel = atoi(value);

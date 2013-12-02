@@ -23,9 +23,6 @@ void setConfiguration();
 void newConfig();
 void A2interruptFun();
 void A3interruptFun();
-void saveConfigurationToFlash();
-void writeData();
-void verifyData();
 void read_sensors();
 void reset_sensor_fusion();
 void compensate_sensor_errors();
@@ -58,16 +55,12 @@ void processCommand();
 void printCommand();
 void setCommand();
 static void vControlTask(void *pvParameters);
-static void vReadIMUTask(void *pvParameters);
-static void vUpdateButtonStatusTask(void *pvParameters);
-void debugPrint(String name, double value, uint8_t decimals, uint8_t width);
-static String floatToString(double number, uint8_t digits);
+static void vInterfaceAndDebugTask(void *pvParameters);
 
 #include "C:\Program Files (x86)\Arduino\hardware\arduino\sam\variants\arduino_due_x\pins_arduino.h" 
 #include "C:\Program Files (x86)\Arduino\hardware\arduino\sam\variants\arduino_due_x\variant.h" 
 #include "C:\Program Files (x86)\Arduino\hardware\arduino\sam\cores\arduino\arduino.h"
 #include "Z:\sebnil On My Mac\Google Drive\Arduino\selfbalancing_robot_v2\selfbalancing_robot_arduino_due\selfbalancing_robot_arduino_due.ino"
-#include "Z:\sebnil On My Mac\Google Drive\Arduino\selfbalancing_robot_v2\selfbalancing_robot_arduino_due\flash.ino"
 #include "Z:\sebnil On My Mac\Google Drive\Arduino\selfbalancing_robot_v2\selfbalancing_robot_arduino_due\imu_ahrs.ino"
 #include "Z:\sebnil On My Mac\Google Drive\Arduino\selfbalancing_robot_v2\selfbalancing_robot_arduino_due\imu_compass.ino"
 #include "Z:\sebnil On My Mac\Google Drive\Arduino\selfbalancing_robot_v2\selfbalancing_robot_arduino_due\imu_dcm.ino"
@@ -75,5 +68,4 @@ static String floatToString(double number, uint8_t digits);
 #include "Z:\sebnil On My Mac\Google Drive\Arduino\selfbalancing_robot_v2\selfbalancing_robot_arduino_due\imu_sensors.ino"
 #include "Z:\sebnil On My Mac\Google Drive\Arduino\selfbalancing_robot_v2\selfbalancing_robot_arduino_due\serial_commands.ino"
 #include "Z:\sebnil On My Mac\Google Drive\Arduino\selfbalancing_robot_v2\selfbalancing_robot_arduino_due\v_control_task.ino"
-#include "Z:\sebnil On My Mac\Google Drive\Arduino\selfbalancing_robot_v2\selfbalancing_robot_arduino_due\v_read_imu_task.ino"
-#include "Z:\sebnil On My Mac\Google Drive\Arduino\selfbalancing_robot_v2\selfbalancing_robot_arduino_due\v_update_button_status_task.ino"
+#include "Z:\sebnil On My Mac\Google Drive\Arduino\selfbalancing_robot_v2\selfbalancing_robot_arduino_due\v_interface_and_debug_task.ino"

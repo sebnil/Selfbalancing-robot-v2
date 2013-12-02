@@ -1,0 +1,92 @@
+static void vUpdateButtonStatusTask(void *pvParameters) {
+	pinMode(LED_PIN, OUTPUT);
+
+	sCmd.addCommand("p", processCommand);  // Converts two arguments to integers and echos them back
+	sCmd.addCommand("print", printCommand);
+	sCmd.addCommand("set", setCommand);
+	for (;;) {
+		sCmd.readSerial();     // We don't do much, just process serial commands
+
+		if (true) {
+			// check buttons
+			startBtn.read();
+			stopBtn.read();
+			calibrateBtn.read();
+			if (startBtn.wasReleased()) {
+				Serial.println("startBtn.wasReleased");
+				anglePID.SetMode(AUTOMATIC);
+				speedPID.SetMode(AUTOMATIC);
+				started = true;
+			}
+			if (stopBtn.wasReleased()) {
+				Serial.println("stopBtn.wasReleased");
+				motorLeft.setSpeed(0);
+				motorRight.setSpeed(0);
+				anglePID.SetMode(MANUAL);
+				speedPID.SetMode(MANUAL);
+				started = false;
+			}
+			if (calibrateBtn.wasReleased()) {
+				if (roll < 0)
+				configuration.calibratedZeroAngle = TO_DEG(roll) + 180;
+				else
+				configuration.calibratedZeroAngle = TO_DEG(roll) - 180;
+			}
+		}
+
+		// Turn LED on.
+		digitalWrite(LED_PIN, HIGH);
+
+		// Sleep for 50 milliseconds.
+		vTaskDelay(50);
+
+		// Turn LED off.
+		digitalWrite(LED_PIN, LOW);
+
+		// Sleep for 5 milliseconds.
+		vTaskDelay(5);
+
+		if (configuration.debugLevel > 2) {
+			if (configuration.speedPIDOutputDebug == 1) {
+				Serial.print(speedPIDOutput);
+				Serial.print(" ");
+			}
+			if (configuration.speedPIDInputDebug == 1) {
+				Serial.print(speedPIDInput);
+				Serial.print(" ");
+			}
+			if (configuration.speedKalmanFilterDebug == 1) {
+				Serial.print(speedKalmanFiltered);
+				Serial.print(" ");
+			}
+			if (configuration.speedMovingAvarageFilter2Debug == 1) {
+				Serial.print(speedFIRFiltered);
+				Serial.print(" ");
+			}
+			if (configuration.anglePIDSetpointDebug == 1) {
+				Serial.print(anglePIDSetpoint);
+				Serial.print(" ");
+			}
+			if (configuration.anglePIDInputDebug == 1) {
+				Serial.print(anglePIDInput);
+				Serial.print(" ");
+			}
+			if (configuration.anglePIDOutputDebug == 1) {
+				Serial.print(anglePIDOutput);
+				Serial.print(" ");
+			}
+			if (configuration.speedRawDebug == 1) {
+				Serial.print(rightMotorSpeed+leftMotorSpeed);
+				Serial.print(" ");
+			}
+			if (configuration.angleRawDebug == 1) {
+				Serial.print(angleRaw);
+				Serial.print(" ");
+			}
+			
+			Serial.print('\r');
+		}
+
+	}
+}
+

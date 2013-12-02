@@ -63,6 +63,7 @@ PID speedPID(&speedPIDInput, &speedPIDOutput, &speedPIDSetpoint, 0, 0, 0, DIRECT
 float yaw;
 float pitch;
 float roll;
+float angleRaw;
 float roll_filtered;
 // DCM timing in the main loop
 unsigned long timestamp;
@@ -107,7 +108,7 @@ struct Configuration {
 	uint8_t anglePIDSetpointDebug;
 	uint8_t anglePIDInputDebug;
 	uint8_t anglePIDOutputDebug;
-	uint8_t rollDebug;
+	uint8_t angleRawDebug;
 };
 Configuration configuration;
 byte b[sizeof(Configuration)];
@@ -145,10 +146,12 @@ void setConfiguration() {
 		configuration.speedPIDOutputDebug = 1;
 		configuration.speedPIDInputDebug = 1;
 		configuration.speedKalmanFilterDebug = 1;
+		configuration.speedRawDebug = 1;
 		configuration.speedMovingAvarageFilter2Debug = 0;
 		configuration.anglePIDSetpointDebug = 1;
 		configuration.anglePIDInputDebug = 1;
 		configuration.anglePIDOutputDebug = 1;
+		configuration.angleRawDebug = 1;
 
 		// write configuration struct to flash at address 4
 		//byte b2[sizeof(Configuration)]; // create byte array to store the struct
@@ -198,13 +201,13 @@ void setup() {
 	setConfiguration();
 
 	// create read imu task
-	xTaskCreate(vReadIMUTask, NULL, configMINIMAL_STACK_SIZE + 50, NULL, 1, NULL);
+	//xTaskCreate(vReadIMUTask, NULL, configMINIMAL_STACK_SIZE + 50, NULL, 1, NULL);
 
 	// create control task
-	xTaskCreate(vControlTask, NULL, configMINIMAL_STACK_SIZE + 50, NULL, 1, NULL);
+	xTaskCreate(vControlTask, NULL, configMINIMAL_STACK_SIZE + 100, NULL, 1, NULL);
 
 	// create button task
-	xTaskCreate(vUpdateButtonStatusTask,NULL, configMINIMAL_STACK_SIZE+100, NULL,1,NULL);
+	xTaskCreate(vInterfaceAndDebugTask,NULL, configMINIMAL_STACK_SIZE+100, NULL,1,NULL);
 
 
 	// start FreeRTOS

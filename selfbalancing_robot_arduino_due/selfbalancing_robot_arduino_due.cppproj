@@ -27,15 +27,16 @@
     <UncachedRange />
     <BootSegment>0</BootSegment>
     <AsfFrameworkConfig>
-      <framework-data xmlns="">
-        <options />
-        <configurations />
-        <files />
-        <documentation help="" />
-        <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.7.2" />
-        </dependencies>
-      </framework-data>
+      <framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.3.0" />
+  </dependencies>
+</framework-data>
     </AsfFrameworkConfig>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -226,6 +227,7 @@
             <Value>USB_VID=0x2341</Value>
             <Value>USB_PID=0x003e</Value>
             <Value>USBCON</Value>
+            <Value>_VMDEBUG=1</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=84000000L</Value>
@@ -412,6 +414,7 @@
             <Value>USB_VID=0x2341</Value>
             <Value>USB_PID=0x003e</Value>
             <Value>USBCON</Value>
+            <Value>_VMDEBUG=1</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=84000000L</Value>
@@ -611,6 +614,7 @@
             <Value>USB_VID=0x2341</Value>
             <Value>USB_PID=0x003e</Value>
             <Value>USBCON</Value>
+            <Value>_VMDEBUG=1</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=84000000L</Value>
@@ -797,6 +801,7 @@
             <Value>USB_VID=0x2341</Value>
             <Value>USB_PID=0x003e</Value>
             <Value>USBCON</Value>
+            <Value>_VMDEBUG=1</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=84000000L</Value>
@@ -833,23 +838,18 @@
     <Compile Include="serial_commands.ino">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Visual Micro\.selfbalancing_robot_arduino_due.vsarduino.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="v_control_task.ino">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="v_read_imu_task.ino">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="v_update_button_status_task.ino">
-      <SubType>compile</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Visual Micro\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Visual Micro\.selfbalancing_robot_arduino_due.vsarduino.h">
-      <SubType>compile</SubType>
-    </Compile>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
