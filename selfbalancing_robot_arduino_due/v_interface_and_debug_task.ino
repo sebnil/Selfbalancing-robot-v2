@@ -1,52 +1,56 @@
 static void vInterfaceAndDebugTask(void *pvParameters) {
 	pinMode(LED_PIN, OUTPUT);
 
-	sCmd.addCommand("p", processCommand);  // Converts two arguments to integers and echos them back
+	// Initialize serial commands. They are located in serial_commands.ino
 	sCmd.addCommand("print", printCommand);
 	sCmd.addCommand("set", setCommand);
+	
 	for (;;) {
-		sCmd.readSerial();     // We don't do much, just process serial commands
+		// Process serial commands
+		sCmd.readSerial();
 
-		if (true) {
-			// check buttons
-			startBtn.read();
-			stopBtn.read();
-			calibrateBtn.read();
-			if (startBtn.wasReleased()) {
-				Serial.println("startBtn.wasReleased");
-				anglePID.SetMode(AUTOMATIC);
-				speedPID.SetMode(AUTOMATIC);
-				started = true;
-			}
-			if (stopBtn.wasReleased()) {
-				Serial.println("stopBtn.wasReleased");
-				motorLeft.setSpeed(0);
-				motorRight.setSpeed(0);
-				anglePID.SetMode(MANUAL);
-				speedPID.SetMode(MANUAL);
-				started = false;
-			}
-			if (calibrateBtn.wasReleased()) {
-				if (roll < 0)
-				configuration.calibratedZeroAngle = TO_DEG(roll) + 180;
-				else
-				configuration.calibratedZeroAngle = TO_DEG(roll) - 180;
-			}
+		// Check button states
+		startBtn.read();
+		stopBtn.read();
+		calibrateBtn.read();
+		
+		// Start the robot if start button is released
+		if (startBtn.wasReleased()) {
+			Serial.println("startBtn.wasReleased");
+			anglePID.SetMode(AUTOMATIC);
+			speedPID.SetMode(AUTOMATIC);
+			started = true;
+		}
+		/* turn off the outer loop and only use the inner loop. 
+		   This makes it possible to by hand move the robot by hand */
+		if (startBtn.isPressed()) {
+			speedPID.SetMode(MANUAL);
+			speedPIDOutput = 0;
+		}
+		// Stop the robot when stop button is released
+		if (stopBtn.wasReleased()) {
+			Serial.println("stopBtn.wasReleased");
+			motorLeft.setSpeed(0);
+			motorRight.setSpeed(0);
+			anglePID.SetMode(MANUAL);
+			speedPID.SetMode(MANUAL);
+			started = false;
+		}
+		// Set a new calibrated zero angle when calibrate button is released
+		if (calibrateBtn.wasReleased()) {
+			if (roll < 0)
+			configuration.calibratedZeroAngle = TO_DEG(roll) + 180;
+			else
+			configuration.calibratedZeroAngle = TO_DEG(roll) - 180;
 		}
 
-		// Turn LED on.
+		// blink the led and delay debug output for x ms
 		digitalWrite(LED_PIN, HIGH);
-
-		// Sleep for 50 milliseconds.
-		vTaskDelay(50);
-
-		// Turn LED off.
+		vTaskDelay((uint8_t)configuration.debugSampleRate/2);
 		digitalWrite(LED_PIN, LOW);
+		vTaskDelay((uint8_t)configuration.debugSampleRate/2);
 
-		// Sleep for 5 milliseconds.
-		vTaskDelay(5);
-
-		if (configuration.debugLevel > 2) {
+		if (configuration.debugLevel > 0) {
 			if (configuration.speedPIDOutputDebug == 1) {
 				Serial.print(speedPIDOutput);
 				Serial.print(" ");

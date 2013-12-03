@@ -100,6 +100,7 @@ struct Configuration {
 	uint8_t motorSpeedSensorSampling;
 	double speedKalmanFilterR;
 	uint8_t debugLevel;
+	uint8_t debugSampleRate;
 	uint8_t speedPIDOutputDebug;
 	uint8_t speedPIDInputDebug;
 	uint8_t speedKalmanFilterDebug;
@@ -142,6 +143,7 @@ void setConfiguration() {
 		
 		
 		configuration.debugLevel = 0;
+		configuration.debugSampleRate = 50;
 		//  configuration.speedPIDSetpointDebug = 1;
 		configuration.speedPIDOutputDebug = 1;
 		configuration.speedPIDInputDebug = 1;
