@@ -87,6 +87,13 @@ static void vInterfaceAndDebugTask(void *pvParameters) {
 				Serial.print(angleRaw);
 				Serial.print(" ");
 			}
+			if (configuration.activePIDTuningDebug == 1) {
+				if (activePIDTuning)
+					Serial.print("1");
+				else
+					Serial.print("0");
+				Serial.print(" ");
+			}
 			
 			Serial.print('\r');
 		}

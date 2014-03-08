@@ -63,19 +63,24 @@ void printCommand() {
 		Serial.print(configuration.motorSpeedSensorSampling);
 		Serial.print(";\nconfiguration.speedKalmanFilterR = ");
 		Serial.print(configuration.speedKalmanFilterR);
+		Serial.print(";\nconfiguration.motorLeftMinimumSpeed = ");
+		Serial.print(configuration.motorLeftMinimumSpeed);
+		Serial.print(";\nconfiguration.motorRightMinimumSpeed = ");
+		Serial.print(configuration.motorRightMinimumSpeed);
 		
-		Serial.print(";\nconfiguration.debugLevel = ");
+		/*Serial.print(";\nconfiguration.debugLevel = ");
 		Serial.print(configuration.debugLevel);
 		Serial.print(";\nconfiguration.debugSampleRate = ");
 		Serial.print(configuration.debugSampleRate);
-		Serial.print(";");
+		Serial.print(";");*/
 	}
 }
-
+		
 void setCommand() {
 	char *arg = sCmd.next();
 	char *value = sCmd.next();
 	if (*value != NULL) {
+		// parameters
 		if (String("speedPIDKp").equals(arg))
 		configuration.speedPIDKp = atof(value);
 		else if (String("speedPIDKi").equals(arg))
@@ -112,6 +117,18 @@ void setCommand() {
 		configuration.motorSpeedSensorSampling = atof(value);
 		else if (String("speedKalmanFilterR").equals(arg))
 		configuration.speedKalmanFilterR = atof(value);
+		else if (String("motorLeftMinimumSpeed").equals(arg))
+		configuration.motorLeftMinimumSpeed = atoi(value);
+		else if (String("motorRightMinimumSpeed").equals(arg))
+		configuration.motorRightMinimumSpeed = atoi(value);
+		
+		// steering
+		else if (String("steeringControl").equals(arg))
+		userControl.steering = atof(value);
+		else if (String("directionControl").equals(arg))
+		userControl.direction = atof(value);
+				
+		// debug
 		else if (String("speedPIDOutputDebug").equals(arg))
 		configuration.speedPIDOutputDebug = atoi(value);
 		else if (String("speedPIDInputDebug").equals(arg))

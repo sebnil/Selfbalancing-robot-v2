@@ -72,30 +72,42 @@ static void vControlTask(void *pvParameters) {
 		// Time again?
 		/*if((millis() - controlTaskTimestamp) >= 10) {
 		controlTaskTimestamp = millis();*/
+		
+		speedPIDSetpoint = userControl.direction;
 
 		// speed pid. input is wheel speed. output is angleSetpoint
 		speedPID.Compute();
 		anglePIDSetpoint = -speedPIDOutput;
 
 		// update angle pid tuning. only update if different from current tuning
-		if(activePIDTuning == AGGRESSIVE && abs(anglePIDInput) < configuration.anglePIDLowerLimit && configuration.anglePIDLowerLimit != 0) {
+		if((activePIDTuning == AGGRESSIVE) && (abs(anglePIDInput) < configuration.anglePIDLowerLimit)) {
 			//we're close to setpoint, use conservative tuning parameters
 			activePIDTuning = CONSERVATIVE;
 			anglePID.SetTunings(configuration.anglePIDConKp, configuration.anglePIDConKi, configuration.anglePIDConKd);
 		}
-		else if (activePIDTuning == CONSERVATIVE && abs(anglePIDInput) < 45) {
+		else if ((activePIDTuning == CONSERVATIVE) && (abs(anglePIDInput) >= configuration.anglePIDLowerLimit)) {
 			//we're far from setpoint, use aggressive tuning parameters
 			activePIDTuning = AGGRESSIVE;
 			anglePID.SetTunings(configuration.anglePIDAggKp, configuration.anglePIDAggKi, configuration.anglePIDAggKd);
 		}
-		else if (abs(anglePIDInput > 45)){
+		else if (abs(anglePIDInput) > 30){
 			// fell down
 			started = false;
 		}
 		anglePID.Compute();
 		if (started) {
-			motorLeft.setSpeedPercentage(anglePIDOutput);
-			motorRight.setSpeedPercentage(anglePIDOutput);
+			if (userControl.steering > 0) {
+				motorLeft.setSpeedPercentage(anglePIDOutput+userControl.steering);
+				motorRight.setSpeedPercentage(anglePIDOutput);
+			}
+			else if (userControl.steering < 0) {
+				motorLeft.setSpeedPercentage(anglePIDOutput);
+				motorRight.setSpeedPercentage(anglePIDOutput-userControl.steering);
+			}
+			else {
+				motorLeft.setSpeedPercentage(anglePIDOutput);
+				motorRight.setSpeedPercentage(anglePIDOutput);
+			}
 		}
 		else {
 			motorLeft.setSpeed(0);

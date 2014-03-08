@@ -423,6 +423,11 @@
         </avrgcc.compiler.symbols.DefSymbols>
       </AvrGccCpp>
     </ToolchainSettings>
+    <VisualMicroSettings>
+      <VisualMicroSettings>
+        <arduino.upload.port>COM8</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
@@ -808,6 +813,11 @@
         </avrgcc.compiler.symbols.DefSymbols>
       </AvrGccCpp>
     </ToolchainSettings>
+    <VisualMicroSettings>
+      <VisualMicroSettings>
+        <arduino.upload.port>COM8</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="imu_ahrs.ino">

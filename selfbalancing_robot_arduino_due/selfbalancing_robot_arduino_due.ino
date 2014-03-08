@@ -4,14 +4,12 @@
 #include <Button.h>        //github.com/JChristensen/Button
 #include <SerialCommand.h> //github.com/kroimon/Arduino-SerialCommand
 #include <MovingAvarageFilter.h> //github.com/sebnil/Moving-Avarage-Filter--Arduino-Library-
-#include <FIR.h> // github.com/sebnil/FIR-filter-Arduino-Library
+//#include <FIR.h> // github.com/sebnil/FIR-filter-Arduino-Library
 #include <FIR_v2.h> // github.com/sebnil/FIR-filter-Arduino-Library
 #include <KalmanFilter.h> // github.com/nut-code-monkey/KalmanFilter-for-Arduino
 #include <FreeRTOS_ARM.h>
 #include <stdlib.h>
-//#include <efc.h>
 #include <DueFlashStorage.h>
-//#include <flash_efc.h>
 DueFlashStorage dueFlashStorage;
 
 
@@ -34,7 +32,7 @@ Button startBtn(30, false, false, 20);
 Button stopBtn(31, false, false, 20);
 Button calibrateBtn(42, false, false, 20);
 
-// ss
+// start and stop
 boolean started = true;
 
 SerialCommand sCmd;     // The demo SerialCommand object
@@ -99,6 +97,8 @@ struct Configuration {
 	uint8_t angleSensorSampling;
 	uint8_t motorSpeedSensorSampling;
 	double speedKalmanFilterR;
+	uint8_t motorLeftMinimumSpeed;
+	uint8_t motorRightMinimumSpeed;
 	uint8_t debugLevel;
 	uint8_t debugSampleRate;
 	uint8_t speedPIDOutputDebug;
@@ -110,9 +110,17 @@ struct Configuration {
 	uint8_t anglePIDInputDebug;
 	uint8_t anglePIDOutputDebug;
 	uint8_t angleRawDebug;
+	uint8_t  activePIDTuningDebug;
 };
 Configuration configuration;
 byte b[sizeof(Configuration)];
+
+struct UserControl {
+	float steering;
+	float direction;
+};
+UserControl userControl = {0, 0};
+
 
 void setConfiguration() {
 	/* Flash is erased every time new code is uploaded. Write the default configuration to flash if first time */
@@ -121,26 +129,27 @@ void setConfiguration() {
 	if (codeRunningForTheFirstTime) {
 		Serial.println("yes");
 		/* OK first time running, set defaults */
-		configuration.speedPIDKp = 0.50;
-		configuration.speedPIDKi = 0.01;
-		configuration.speedPIDKd = 0.01;
-		configuration.speedPIDOutputLowerLimit = -3.00;
-		configuration.speedPIDOutputHigherLimit = 3.00;
-		configuration.anglePIDAggKp = 50.00;
-		configuration.anglePIDAggKi = 0.00;
-		configuration.anglePIDAggKd = 0.00;
-		configuration.anglePIDConKp = 20.00;
-		configuration.anglePIDConKi = 0.50;
+		configuration.speedPIDKp = 0.85;
+		configuration.speedPIDKi = 0.10;
+		configuration.speedPIDKd = 0.00;
+		configuration.speedPIDOutputLowerLimit = -10.00;
+		configuration.speedPIDOutputHigherLimit = 10.00;
+		configuration.anglePIDAggKp = 20.00;
+		configuration.anglePIDAggKi = 0.20;
+		configuration.anglePIDAggKd = 0.70;
+		configuration.anglePIDConKp = 15.00;
+		configuration.anglePIDConKi = 0.00;
 		configuration.anglePIDConKd = 0.25;
 		configuration.anglePIDLowerLimit = 5.00;
-		configuration.calibratedZeroAngle = -11.35;
+		configuration.calibratedZeroAngle = -10.87;
 		configuration.anglePIDSampling = 10;
-		configuration.speedPIDSampling = 5;
-		configuration.angleKalmanFilterR = 1.00;
-		configuration.angleSensorSampling = 15;
-		configuration.motorSpeedSensorSampling = 10;
-		configuration.speedKalmanFilterR = 3.00;
-		
+		configuration.speedPIDSampling = 15;
+		configuration.angleKalmanFilterR = 10.00;
+		configuration.angleSensorSampling = 5;
+		configuration.motorSpeedSensorSampling = 5;
+		configuration.speedKalmanFilterR = 20.00;
+		configuration.motorLeftMinimumSpeed = 55;
+		configuration.motorRightMinimumSpeed = 55;
 		
 		configuration.debugLevel = 0;
 		configuration.debugSampleRate = 50;
@@ -154,6 +163,7 @@ void setConfiguration() {
 		configuration.anglePIDInputDebug = 1;
 		configuration.anglePIDOutputDebug = 1;
 		configuration.angleRawDebug = 1;
+		configuration.activePIDTuningDebug = 1;
 
 		// write configuration struct to flash at address 4
 		//byte b2[sizeof(Configuration)]; // create byte array to store the struct
@@ -189,7 +199,6 @@ void setup() {
 
 	attachInterrupt(A2, A2interruptFun, RISING);
 	attachInterrupt(A3, A3interruptFun, RISING);
-
 
 	// filters
 	speedKalmanFilter.setState(0);
@@ -251,6 +260,10 @@ void newConfig() {
 	
 	angleKalmanFilter.setR(configuration.angleKalmanFilterR);
 	speedKalmanFilter.setR(configuration.speedKalmanFilterR);
+	
+	// init motors
+	motorLeft.setMinimumSpeed(configuration.motorLeftMinimumSpeed);
+	motorRight.setMinimumSpeed(configuration.motorRightMinimumSpeed);
 	
 	// write configuration struct to flash at address 4
 	//byte b2[sizeof(Configuration)]; // create byte array to store the struct
