@@ -1,15 +1,16 @@
 #include <Wire.h>
-#include <L29x.h>
+#include <stdlib.h>
+#include <L29x.h> //https://github.com/sebnil/L29x
 #include <PID_v1.h> //github.com/mwoodward/Arduino-PID-Library
 #include <Button.h>        //github.com/JChristensen/Button
 #include <SerialCommand.h> //github.com/kroimon/Arduino-SerialCommand
 #include <MovingAvarageFilter.h> //github.com/sebnil/Moving-Avarage-Filter--Arduino-Library-
 //#include <FIR.h> // github.com/sebnil/FIR-filter-Arduino-Library
-#include <FIR_v2.h> // github.com/sebnil/FIR-filter-Arduino-Library
-#include <KalmanFilter.h> // github.com/nut-code-monkey/KalmanFilter-for-Arduino
-#include <FreeRTOS_ARM.h>
-#include <stdlib.h>
-#include <DueFlashStorage.h>
+#include <FIR_v2.h> // https://github.com/sebnil/FIR_v2
+#include <KalmanFilter.h> // https://github.com/sebnil/KalmanFilter-for-Arduino
+#include <FreeRTOS_ARM.h> //https://github.com/greiman/FreeRTOS-Arduino
+#include <DueFlashStorage.h> //https://github.com/sebnil/DueFlashStorage
+
 DueFlashStorage dueFlashStorage;
 
 
@@ -127,7 +128,7 @@ void setConfiguration() {
 	// running for the first time?
 	uint8_t codeRunningForTheFirstTime = dueFlashStorage.read(0); // flash bytes will be 255 at first run
 	if (codeRunningForTheFirstTime) {
-		Serial.println("yes");
+		Serial.println("codeRunningForTheFirstTime");
 		/* OK first time running, set defaults */
 		configuration.speedPIDKp = 0.85;
 		configuration.speedPIDKi = 0.10;
@@ -174,7 +175,7 @@ void setConfiguration() {
 		dueFlashStorage.write(0, 0);
 	}
 	else {
-		Serial.println("no");
+		Serial.println("read configuration struct from flash");
 		/* read configuration struct from flash */
 		byte* b2 = (dueFlashStorage.readAddress(4)); // byte array which is read from flash at address 4
 		memcpy(&configuration, b2, sizeof(Configuration)); // copy byte array to temporary struct
